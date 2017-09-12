@@ -1,2 +1,2 @@
 # docker-varnish
-Docker image containing Varnish 5.1.3 based on Alpine Linux
+Docker image with Varnish and Varnish modules based on Alpine Linux
