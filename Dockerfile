@@ -7,15 +7,11 @@ RUN apk --no-cache add varnish bash
 ADD default.vcl /etc/varnish/default.vcl
 ADD cmd.sh /cmd.sh
 ADD vmods.sh /root/vmods.sh
-ADD geoip.sh /root/geoip.sh
 
 RUN chmod +x /cmd.sh
 
 RUN bash /root/vmods.sh \
     && rm -rf /root/vmods.sh
-
-RUN bash /root/geoip.sh \
-    && rm -rf /root/geoip.sh
 
 ENV VARNISH_BACKEND_PORT 80
 ENV VARNISH_BACKEND_IP 172.18.0.8
