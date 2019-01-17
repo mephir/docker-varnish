@@ -9,5 +9,5 @@ do
 done
 
 # Start varnish and log
-varnishd -f /etc/varnish/default.vcl -s malloc,100M -a 0.0.0.0:${VARNISH_PORT}
+varnishd -f /etc/varnish/default.vcl -s malloc,${VARNISH_CACHE_SIZE:-150M} -l ${VARNISH_SHMLOG_SIZE:-80M} -a 0.0.0.0:${VARNISH_PORT}
 varnishlog
